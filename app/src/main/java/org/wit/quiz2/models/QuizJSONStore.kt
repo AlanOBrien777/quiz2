@@ -56,6 +56,7 @@ class QuizJSONStore(private val context: Context) : QuizStore {
         serialize()
     }
 
+
     private fun serialize() {
         val jsonString = gsonBuilder.toJson(quizzes, listType)
         write(context, JSON_FILE, jsonString)
