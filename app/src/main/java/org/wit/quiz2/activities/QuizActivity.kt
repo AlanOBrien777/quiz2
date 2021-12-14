@@ -17,7 +17,6 @@ import org.wit.quiz2.R
 import org.wit.quiz2.databinding.ActivityQuizBinding
 import org.wit.quiz2.helpers.showImagePicker
 import org.wit.quiz2.main.MainApp
-import org.wit.quiz2.models.Location
 import org.wit.quiz2.models.QuizModel
 import timber.log.Timber
 import timber.log.Timber.i
@@ -28,8 +27,6 @@ class QuizActivity : AppCompatActivity() {
     var quiz = QuizModel()
     lateinit var app: MainApp
     private lateinit var imageIntentLauncher : ActivityResultLauncher<Intent>
-    private lateinit var mapIntentLauncher : ActivityResultLauncher<Intent>
-    //var location = Location(52.245696, -7.139102, 15f)
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -81,20 +78,7 @@ class QuizActivity : AppCompatActivity() {
             showImagePicker(imageIntentLauncher)
         }
 
-        binding.quizLocation.setOnClickListener {
-            val location = Location(52.245696, -7.139102, 15f)
-            if (quiz.zoom != 0f) {
-                location.lat =  quiz.lat
-                location.lng = quiz.lng
-                location.zoom = quiz.zoom
-            }
-            val launcherIntent = Intent(this, MapActivity::class.java)
-                .putExtra("location", location)
-            mapIntentLauncher.launch(launcherIntent)
-        }
-
         registerImagePickerCallback()
-        registerMapCallback()
     }
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
@@ -124,26 +108,6 @@ class QuizActivity : AppCompatActivity() {
                                 .load(quiz.image)
                                 .into(binding.quizImage)
                             binding.chooseImage.setText(R.string.change_quiz_image)
-                        } // end of if
-                    }
-                    RESULT_CANCELED -> { } else -> { }
-                }
-            }
-    }
-
-    private fun registerMapCallback() {
-        mapIntentLauncher =
-            registerForActivityResult(ActivityResultContracts.StartActivityForResult())
-            { result ->
-                when (result.resultCode) {
-                    RESULT_OK -> {
-                        if (result.data != null) {
-                            i("Got Location ${result.data.toString()}")
-                            val location = result.data!!.extras?.getParcelable<Location>("location")!!
-                            i("Location == $location")
-                            quiz.lat = location.lat
-                            quiz.lng = location.lng
-                            quiz.zoom = location.zoom
                         } // end of if
                     }
                     RESULT_CANCELED -> { } else -> { }

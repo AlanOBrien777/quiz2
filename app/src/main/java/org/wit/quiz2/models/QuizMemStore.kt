@@ -29,11 +29,12 @@ class QuizMemStore : QuizStore {
             foundQuiz.title = quiz.title
             foundQuiz.description = quiz.description
             foundQuiz.image = quiz.image
-            foundQuiz.lat = quiz.lat
-            foundQuiz.lng = quiz.lng
-            foundQuiz.zoom = quiz.zoom
             logAll()
         }
+    }
+
+    override fun delete(quiz: QuizModel) {
+        TODO("Not yet implemented")
     }
 
     private fun logAll() {

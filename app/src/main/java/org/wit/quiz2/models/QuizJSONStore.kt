@@ -49,11 +49,12 @@ class QuizJSONStore(private val context: Context) : QuizStore {
             foundQuiz.title = quiz.title
             foundQuiz.description = quiz.description
             foundQuiz.image = quiz.image
-            foundQuiz.lat = quiz.lat
-            foundQuiz.lng = quiz.lng
-            foundQuiz.zoom = quiz.zoom
         }
         serialize()
+    }
+
+    override fun delete(quiz: QuizModel) {
+        TODO("Not yet implemented")
     }
 
 

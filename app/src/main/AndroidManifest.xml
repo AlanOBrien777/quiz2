@@ -14,10 +14,6 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Quiz">
         <activity
-            android:name=".activities.MapActivity"
-            android:exported="true"
-            android:label="@string/title_activity_map" />
-        <activity
             android:name=".activities.QuizListActivity"
             android:exported="true">
             <intent-filter>

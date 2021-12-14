@@ -11,6 +11,4 @@
     <string name="button_addImage"> Add Image </string>
     <string name="select_quiz_image">Select quiz image</string>
     <string name="change_quiz_image">Change quiz image</string>
-    <string name="button_location">Set Location</string>
-    <string name="title_activity_map">Map</string>
 </resources>

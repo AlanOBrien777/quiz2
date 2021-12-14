@@ -75,3 +75,4 @@ class QuizListActivity : AppCompatActivity(), QuizListener/*, MultiplePermission
     }
 
 }
+
