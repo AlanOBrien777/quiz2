@@ -47,12 +47,24 @@ class QuizJSONStore(private val context: Context) : QuizStore {
         var foundQuiz: QuizModel? = quizzesList.find { p -> p.id == quiz.id }
         if (foundQuiz != null) {
             foundQuiz.title = quiz.title
-            foundQuiz.description = quiz.description
+            foundQuiz.genre = quiz.genre
+            foundQuiz.question1 = quiz.question1
+            foundQuiz.question2 = quiz.question2
+            foundQuiz.question3 = quiz.question3
+            foundQuiz.question4 = quiz.question4
+            foundQuiz.question5 = quiz.question5
+            foundQuiz.answer1 = quiz.answer1
+            foundQuiz.answer2 = quiz.answer2
+            foundQuiz.answer3 = quiz.answer3
+            foundQuiz.answer4 = quiz.answer4
+            foundQuiz.answer5 = quiz.answer5
             foundQuiz.image = quiz.image
-            foundQuiz.lat = quiz.lat
-            foundQuiz.lng = quiz.lng
-            foundQuiz.zoom = quiz.zoom
         }
+        serialize()
+    }
+
+    override fun delete(quiz: QuizModel) {
+    quizzes.remove(quiz)
         serialize()
     }
 

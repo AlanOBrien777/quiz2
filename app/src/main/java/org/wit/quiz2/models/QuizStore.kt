@@ -6,4 +6,5 @@ interface QuizStore {
     fun findAll(): List<QuizModel>
     fun create(quiz: QuizModel)
     fun update(quiz: QuizModel)
+    fun delete(quiz: QuizModel)
 }

@@ -27,13 +27,14 @@ class QuizMemStore : QuizStore {
         val foundQuiz: QuizModel? = quizzes.find { p -> p.id == quiz.id }
         if (foundQuiz != null) {
             foundQuiz.title = quiz.title
-            foundQuiz.description = quiz.description
+            foundQuiz.genre = quiz.genre
             foundQuiz.image = quiz.image
-            foundQuiz.lat = quiz.lat
-            foundQuiz.lng = quiz.lng
-            foundQuiz.zoom = quiz.zoom
             logAll()
         }
+    }
+
+    override fun delete(quiz: QuizModel) {
+        TODO("Not yet implemented")
     }
 
     private fun logAll() {
