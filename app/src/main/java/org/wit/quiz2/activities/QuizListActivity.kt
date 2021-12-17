@@ -9,14 +9,13 @@ import androidx.activity.result.contract.ActivityResultContracts
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import org.wit.quiz2.R
-import org.wit.quiz2.activities.QuizActivity
 import org.wit.quiz2.adapters.QuizAdapter
 import org.wit.quiz2.adapters.QuizListener
 import org.wit.quiz2.databinding.ActivityQuizListBinding
 import org.wit.quiz2.main.MainApp
 import org.wit.quiz2.models.QuizModel
 
-class QuizListActivity : AppCompatActivity(), QuizListener/*, MultiplePermissionsListener*/ {
+class QuizListActivity : AppCompatActivity(), QuizListener {
 
     lateinit var app: MainApp
     private lateinit var binding: ActivityQuizListBinding
@@ -65,14 +64,16 @@ class QuizListActivity : AppCompatActivity(), QuizListener/*, MultiplePermission
             { loadQuizzes() }
     }
 
+
     private fun loadQuizzes() {
         showQuizzes(app.quizzes.findAll())
     }
 
-    fun showQuizzes (quizzes: List<QuizModel>) {
+   private fun showQuizzes (quizzes: List<QuizModel>) {
         binding.recyclerView.adapter = QuizAdapter(quizzes, this)
         binding.recyclerView.adapter?.notifyDataSetChanged()
     }
 
-}
 
+
+}

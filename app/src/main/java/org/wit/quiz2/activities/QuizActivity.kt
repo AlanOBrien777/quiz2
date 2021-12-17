@@ -27,11 +27,10 @@ class QuizActivity : AppCompatActivity() {
     var quiz = QuizModel()
     lateinit var app: MainApp
     private lateinit var imageIntentLauncher : ActivityResultLauncher<Intent>
+    var edit = false
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-
-        var edit = false
 
         binding = ActivityQuizBinding.inflate(layoutInflater)
         setContentView(binding.root)
@@ -46,7 +45,18 @@ class QuizActivity : AppCompatActivity() {
             edit = true
             quiz = intent.extras?.getParcelable("quiz_edit")!!
             binding.quizTitle.setText(quiz.title)
-            binding.description.setText(quiz.description)
+            binding.genre.setText(quiz.genre)
+            binding.question1.setText(quiz.question1)
+            binding.question2.setText(quiz.question2)
+            binding.question3.setText(quiz.question3)
+            binding.question4.setText(quiz.question4)
+            binding.question5.setText(quiz.question5)
+            binding.answer1.setText(quiz.answer1)
+            binding.answer2.setText(quiz.answer2)
+            binding.answer3.setText(quiz.answer3)
+            binding.answer4.setText(quiz.answer4)
+            binding.answer5.setText(quiz.answer5)
+
             binding.btnAdd.setText(R.string.save_quiz)
             Picasso.get()
                 .load(quiz.image)
@@ -58,7 +68,18 @@ class QuizActivity : AppCompatActivity() {
 
         binding.btnAdd.setOnClickListener() {
             quiz.title = binding.quizTitle.text.toString()
-            quiz.description = binding.description.text.toString()
+            quiz.genre = binding.genre.text.toString()
+            quiz.question1 = binding.question1.text.toString()
+            quiz.question2 = binding.question2.text.toString()
+            quiz.question3 = binding.question3.text.toString()
+            quiz.question4 = binding.question4.text.toString()
+            quiz.question5 = binding.question5.text.toString()
+            quiz.answer1 = binding.answer1.text.toString()
+            quiz.answer2 = binding.answer2.text.toString()
+            quiz.answer3 = binding.answer3.text.toString()
+            quiz.answer4 = binding.answer4.text.toString()
+            quiz.answer5 = binding.answer5.text.toString()
+
             if (quiz.title.isEmpty()) {
                 Snackbar.make(it,R.string.enter_quiz_title, Snackbar.LENGTH_LONG)
                     .show()
@@ -83,11 +104,16 @@ class QuizActivity : AppCompatActivity() {
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
         menuInflater.inflate(R.menu.menu_quiz, menu)
+        if (edit) menu.getItem(0).isVisible = true
         return super.onCreateOptionsMenu(menu)
     }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         when (item.itemId) {
+            R.id.item_delete -> {
+                app.quizzes.delete(quiz)
+                finish()
+            }
             R.id.item_cancel -> {
                 finish()
             }
@@ -114,4 +140,5 @@ class QuizActivity : AppCompatActivity() {
                 }
             }
     }
+
 }

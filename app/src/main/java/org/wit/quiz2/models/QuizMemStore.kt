@@ -27,7 +27,7 @@ class QuizMemStore : QuizStore {
         val foundQuiz: QuizModel? = quizzes.find { p -> p.id == quiz.id }
         if (foundQuiz != null) {
             foundQuiz.title = quiz.title
-            foundQuiz.description = quiz.description
+            foundQuiz.genre = quiz.genre
             foundQuiz.image = quiz.image
             logAll()
         }

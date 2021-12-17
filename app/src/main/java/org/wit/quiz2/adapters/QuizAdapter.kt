@@ -1,11 +1,10 @@
 package org.wit.quiz2.adapters
 
-import android.net.Uri
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
-import com.bumptech.glide.Glide
 import com.squareup.picasso.Picasso
+import org.wit.quiz2.activities.QuizListActivity
 import org.wit.quiz2.databinding.CardQuizBinding
 import org.wit.quiz2.models.QuizModel
 
@@ -13,9 +12,9 @@ interface QuizListener {
     fun onQuizClick(quiz: QuizModel)
 }
 
-class QuizAdapter constructor(
+class QuizAdapter(
     private var quizzes: List<QuizModel>,
-    private val listener: QuizListener
+    private val listener: QuizListActivity
 ) :
     RecyclerView.Adapter<QuizAdapter.MainHolder>() {
 
@@ -38,12 +37,8 @@ class QuizAdapter constructor(
 
         fun bind(quiz: QuizModel, listener: QuizListener) {
             binding.quizTitle.text = quiz.title
-            binding.description.text = quiz.description
+            binding.genre.text = quiz.genre
             Picasso.get().load(quiz.image).resize(200,200).into(binding.imageIcon)
-//            Glide.with(binding.root)
-//                .load(quiz.image)
-//                .override(200,200)
-//                .into(binding.imageIcon)
             binding.root.setOnClickListener { listener.onQuizClick(quiz) }
         }
     }

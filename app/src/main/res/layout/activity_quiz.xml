@@ -55,17 +55,156 @@
                     android:textSize="14sp" />
 
                 <EditText
-                    android:id="@+id/description"
+                    android:id="@+id/genre"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_margin="8dp"
-                    android:hint="@string/hint_quizDescription"
+                    android:hint="@string/hint_quizGenre"
                     android:inputType="text"
                     android:maxLength="25"
                     android:maxLines="1"
                     android:padding="8dp"
                     android:textColor="@color/colorPrimaryDark"
                     android:textSize="14sp" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/questions_title"
+                    android:textSize="18sp"
+                    android:textAlignment="center"
+                    android:textColor="@color/colorPrimary"/>
+
+                <EditText
+                    android:id="@+id/question1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="8dp"
+                    android:hint="@string/hint_quizQuestion1"
+                    android:inputType="text"
+                    android:maxLength="100"
+                    android:maxLines="1"
+                    android:padding="8dp"
+                    android:textColor="@color/colorPrimaryDark"
+                    android:textSize="14sp" />
+
+                <EditText
+                    android:id="@+id/answer1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="8dp"
+                    android:hint="@string/hint_quizAnswer1"
+                    android:inputType="text"
+                    android:maxLength="100"
+                    android:maxLines="1"
+                    android:padding="8dp"
+                    android:textColor="@color/colorPrimaryDark"
+                    android:textSize="14sp" />
+
+                <EditText
+                    android:id="@+id/question2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="8dp"
+                    android:hint="@string/hint_quizQuestion2"
+                    android:inputType="text"
+                    android:maxLength="100"
+                    android:maxLines="1"
+                    android:padding="8dp"
+                    android:textColor="@color/colorPrimaryDark"
+                    android:textSize="14sp" />
+
+                <EditText
+                    android:id="@+id/answer2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="8dp"
+                    android:hint="@string/hint_quizAnswer2"
+                    android:inputType="text"
+                    android:maxLength="100"
+                    android:maxLines="1"
+                    android:padding="8dp"
+                    android:textColor="@color/colorPrimaryDark"
+                    android:textSize="14sp" />
+
+                <EditText
+                    android:id="@+id/question3"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="8dp"
+                    android:hint="@string/hint_quizQuestion3"
+                    android:inputType="text"
+                    android:maxLength="100"
+                    android:maxLines="1"
+                    android:padding="8dp"
+                    android:textColor="@color/colorPrimaryDark"
+                    android:textSize="14sp" />
+
+                <EditText
+                    android:id="@+id/answer3"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="8dp"
+                    android:hint="@string/hint_quizAnswer3"
+                    android:inputType="text"
+                    android:maxLength="100"
+                    android:maxLines="1"
+                    android:padding="8dp"
+                    android:textColor="@color/colorPrimaryDark"
+                    android:textSize="14sp" />
+
+                <EditText
+                    android:id="@+id/question4"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="8dp"
+                    android:hint="@string/hint_quizQuestion4"
+                    android:inputType="text"
+                    android:maxLength="100"
+                    android:maxLines="1"
+                    android:padding="8dp"
+                    android:textColor="@color/colorPrimaryDark"
+                    android:textSize="14sp" />
+
+                <EditText
+                    android:id="@+id/answer4"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="8dp"
+                    android:hint="@string/hint_quizAnswer4"
+                    android:inputType="text"
+                    android:maxLength="100"
+                    android:maxLines="1"
+                    android:padding="8dp"
+                    android:textColor="@color/colorPrimaryDark"
+                    android:textSize="14sp" />
+
+                <EditText
+                    android:id="@+id/question5"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="8dp"
+                    android:hint="@string/hint_quizQuestion5"
+                    android:inputType="text"
+                    android:maxLength="100"
+                    android:maxLines="1"
+                    android:padding="8dp"
+                    android:textColor="@color/colorPrimaryDark"
+                    android:textSize="14sp" />
+
+                <EditText
+                    android:id="@+id/answer5"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="8dp"
+                    android:hint="@string/hint_quizAnswer5"
+                    android:inputType="text"
+                    android:maxLength="100"
+                    android:maxLines="1"
+                    android:padding="8dp"
+                    android:textColor="@color/colorPrimaryDark"
+                    android:textSize="14sp" />
+
 
                 <Button
                     android:id="@+id/chooseImage"

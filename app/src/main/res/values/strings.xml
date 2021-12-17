@@ -1,14 +1,28 @@
 <resources>
-    <string name="app_name">Quiz</string>
+    <string name="app_name">Quiz Creator</string>
     <string name="button_addQuiz">Add Quiz</string>
     <string name="hint_quizTitle">Quiz Title</string>
-    <string name="hint_quizDescription">Description </string>
+    <string name="hint_quizGenre">Genre </string>
     <string name="menu_addQuiz">Add</string>
-    <string name="delete_quiz">Delete Quiz</string>
     <string name="menu_cancelQuiz">Cancel</string>
     <string name="enter_quiz_title"> Please enter a Quiz Title </string>
     <string name="save_quiz"> Save Quiz </string>
     <string name="button_addImage"> Add Image </string>
     <string name="select_quiz_image">Select quiz image</string>
     <string name="change_quiz_image">Change quiz image</string>
+    <string name="menu_deleteQuiz">Delete</string>
+    <string name="quiz_image_placeholder">Quiz Image</string>
+    <string name="quiz_title_placeholder">Quiz Title</string>
+    <string name="quiz_genre_placeholder">Quiz Description</string>
+    <string name="hint_quizQuestion1">Question1 </string>
+    <string name="hint_quizQuestion2">Question 2 </string>
+    <string name="hint_quizQuestion3">Question 3 </string>
+    <string name="hint_quizQuestion4">Question 4 </string>
+    <string name="hint_quizQuestion5">Question 5 </string>
+    <string name="hint_quizAnswer1">Answer 1 </string>
+    <string name="hint_quizAnswer2">Answer 2 </string>
+    <string name="hint_quizAnswer3">Answer 3 </string>
+    <string name="hint_quizAnswer4">Answer 4 </string>
+    <string name="hint_quizAnswer5">Answer 5 </string>
+    <string name="questions_title">Questions and Answers</string>
 </resources>
